@@ -5,6 +5,8 @@ global class AdvancedDataManipulator implements Schedulable {
     Integer ContactCount = 0;
     Integer LeadCount = 0;
     Integer OpportunityCount = 0;
+	
+    RandomDataGenerator randomizer = new RandomDataGenerator();
     
     private void GetGlobalDataSetCounts() {
         AccountCount = [SELECT COUNT() FROM Account];
@@ -14,59 +16,10 @@ global class AdvancedDataManipulator implements Schedulable {
         OpportunityCount = [SELECT COUNT() FROM Opportunity];
     }
 
-    private Integer GetRandomNumber(Integer multiplier) {
-        return Integer.valueof(Math.random() * multiplier);
-    }
-
-    private String GenerateRandomFullName() {
-        Integer randomInitialIndex = GetRandomNumber(Names.Initials.size() - 1);
-        String randomFullName = GenerateRandomFirstName() + ' ' + Names.Initials[randomInitialIndex] + '. ' + GenerateRandomLastName();
-        return randomFullName;
-    }
-
-    private String GenerateRandomFirstName() {
-        Integer randomFirstNameIndex = GetRandomNumber(Names.FirstNames.size() - 1);
-        return Names.FirstNames[randomFirstNameIndex];
-    }
-    
-    private String GenerateRandomLastName() {
-        Integer randomLastNameIndex = GetRandomNumber(Names.LastNames.size() - 1);
-        return Names.LastNames[randomLastNameIndex];
-    }
-    
-    private String GenerateRandomPhone() {
-        String randomAreaCode = String.valueOf(GetRandomNumber(1000));
-        String randomMiddleBit = String.valueOf(GetRandomNumber(1000));
-        String randomLastBit = String.valueOf(GetRandomNumber(100000));
-        return '(' + randomAreaCode + ') ' + randomMiddleBit + ' ' + randomLastBit;
-    }
-
-    private Boolean GenerateRandomBool() {
-        Integer oneOrZero = GetRandomNumber(2);
-        return oneOrZero == 1;
-    }
-    
-    private String GenerateRandomCompany() {
-        Integer randomSuffixIndex = GetRandomNumber(Names.CompanySuffixes.size() - 1);
-        String randomSuffix = Names.CompanySuffixes[randomSuffixIndex];
-        return GenerateRandomLastName() + randomSuffix;
-    }
-    
-    private String GenerateRandomString(Integer stringLength) {
-        String randomString = '';
-
-        for (Integer i = 0; i < stringLength; i++) {
-            Integer randomInitialIndex = GetRandomNumber(Names.Initials.size() - 1);
-            randomString += Names.Initials[randomInitialIndex];
-        }
-
-        return randomString;
-    }
-
     private void CreateRandomAccount() {
         Account newAccount = new Account();
-        newAccount.Name = GenerateRandomFullName();
-        newAccount.Phone = GenerateRandomPhone();
+        newAccount.Name = randomizer.GenerateRandomFullName();
+        newAccount.Phone = randomizer.GenerateRandomPhone();
         insert newAccount;
         AccountCount = AccountCount + 1;
     }
@@ -85,15 +38,15 @@ global class AdvancedDataManipulator implements Schedulable {
     
     private void EditRandomAccount() {
         Account accountToEdit = GetRandomAccount();
-        accountToEdit.Name = GenerateRandomFullName();
-        accountToEdit.Phone = GenerateRandomPhone();
+        accountToEdit.Name = randomizer.GenerateRandomFullName();
+        accountToEdit.Phone = randomizer.GenerateRandomPhone();
         update accountToEdit;
     }
     
     private void CreateRandomCase() {
         Case newCase = new Case();
-        newCase.IsEscalated = GenerateRandomBool();
-        newCase.Reason = GenerateRandomString(GetRandomNumber(10));
+        newCase.IsEscalated = randomizer.GenerateRandomBool();
+        newCase.Reason = randomizer.GenerateRandomStringOfMaxLength(10);
         insert newCase;
         CaseCount = CaseCount + 1;
     }
@@ -113,15 +66,15 @@ global class AdvancedDataManipulator implements Schedulable {
     private void EditRandomCase() {
         Case caseToEdit = GetRandomCase();
         caseToEdit.IsEscalated = !caseToEdit.IsEscalated;
-        caseToEdit.Reason = GenerateRandomString(GetRandomNumber(10));
+        caseToEdit.Reason = randomizer.GenerateRandomStringOfMaxLength(10);
         update caseToEdit;
     }
     
     private void CreateRandomContact() {
         Contact newContact = new Contact();
-        newContact.FirstName = GenerateRandomFirstName();
-        newContact.LastName = GenerateRandomLastName();
-        newContact.Description = GenerateRandomString(GetRandomNumber(20));
+        newContact.FirstName = randomizer.GenerateRandomFirstName();
+        newContact.LastName = randomizer.GenerateRandomLastName();
+        newContact.Description = randomizer.GenerateRandomStringOfMaxLength(20);
         insert newContact;
         ContactCount = ContactCount + 1;
     }
@@ -140,17 +93,17 @@ global class AdvancedDataManipulator implements Schedulable {
     
     private void EditRandomContact() {
         Contact contactToEdit = GetRandomContact();
-        contactToEdit.FirstName = GenerateRandomFirstName();
-        contactToEdit.LastName = GenerateRandomLastName();
-        contactToEdit.Description = GenerateRandomString(GetRandomNumber(20));
+        contactToEdit.FirstName = randomizer.GenerateRandomFirstName();
+        contactToEdit.LastName = randomizer.GenerateRandomLastName();
+        contactToEdit.Description = randomizer.GenerateRandomStringOfMaxLength(20);
         update contactToEdit;
     }
     
     private void CreateRandomLead() {
         Lead newLead = new Lead();
-        newLead.LastName = GenerateRandomLastName();
-        newLead.Company = GenerateRandomCompany();
-        newLead.Phone = GenerateRandomPhone();
+        newLead.LastName = randomizer.GenerateRandomLastName();
+        newLead.Company = randomizer.GenerateRandomCompany();
+        newLead.Phone = randomizer.GenerateRandomPhone();
         insert newLead;
         LeadCount = LeadCount + 1;
     }
@@ -169,15 +122,15 @@ global class AdvancedDataManipulator implements Schedulable {
     
     private void EditRandomLead() {
         Lead leadToEdit = GetRandomLead();
-        leadToEdit.Company = GenerateRandomCompany();
-        leadToEdit.Phone = GenerateRandomPhone();
+        leadToEdit.Company = randomizer.GenerateRandomCompany();
+        leadToEdit.Phone = randomizer.GenerateRandomPhone();
         update leadToEdit;
     }
     
     private void CreateRandomOpportunity() {
         Opportunity newOpportunity = new Opportunity();
-        newOpportunity.Description =  GenerateRandomString(GetRandomNumber(20)); 
-        newOpportunity.Name = GenerateRandomCompany();
+        newOpportunity.Description =  randomizer.GenerateRandomStringOfMaxLength(20); 
+        newOpportunity.Name = randomizer.GenerateRandomCompany();
         newOpportunity.StageName = 'Stage1';
         newOpportunity.CloseDate =  date.newInstance(2020, 5, 1);
         insert newOpportunity;
@@ -198,14 +151,14 @@ global class AdvancedDataManipulator implements Schedulable {
     
     private void EditRandomOpportunity() {
         Opportunity opportunityToEdit = GetRandomOpportunity();
-        opportunityToEdit.NextStep = GenerateRandomString(GetRandomNumber(5));
-        opportunityToEdit.Description = GenerateRandomString(GetRandomNumber(10));
+        opportunityToEdit.NextStep = randomizer.GenerateRandomStringOfMaxLength(5);
+        opportunityToEdit.Description = randomizer.GenerateRandomStringOfMaxLength(10);
         update opportunityToEdit;
     }
     
     private void DoAccountAction() {
         try {
-            Integer actionIndex =  GetRandomNumber(3);
+            Integer actionIndex =  randomizer.GetRandomNumber(3);
             
             switch on actionIndex {
                  when 0 {
@@ -238,7 +191,7 @@ global class AdvancedDataManipulator implements Schedulable {
     
     private void DoCaseAction() {
         try {
-            Integer actionIndex =  GetRandomNumber(3);
+            Integer actionIndex =  randomizer.GetRandomNumber(3);
     
             switch on actionIndex {
                 when 0 {
@@ -271,7 +224,7 @@ global class AdvancedDataManipulator implements Schedulable {
     
     private void DoContactAction() {
         try {
-            Integer actionIndex =  GetRandomNumber(3);
+            Integer actionIndex =  randomizer.GetRandomNumber(3);
     
             switch on actionIndex {
                 when 0 {
@@ -304,7 +257,7 @@ global class AdvancedDataManipulator implements Schedulable {
 
     private void DoLeadAction() {
         try {
-            Integer actionIndex =  GetRandomNumber(3);
+            Integer actionIndex =  randomizer.GetRandomNumber(3);
     
             switch on actionIndex {
                 when 0 {
@@ -337,7 +290,7 @@ global class AdvancedDataManipulator implements Schedulable {
 
     private void DoOpportunityAction() {
         try {
-            Integer actionIndex =  GetRandomNumber(3);
+            Integer actionIndex =  randomizer.GetRandomNumber(3);
     
             switch on actionIndex {
                 when 0 {

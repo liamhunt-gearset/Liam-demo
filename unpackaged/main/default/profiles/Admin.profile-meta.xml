@@ -1,6 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="utf-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>false</custom>
+    <userLicense>Salesforce</userLicense>
     <classAccesses>
-        <apexClass>ABasicApexToQuicklyDeploy</apexClass>
+        <apexClass>AccountInfoValidation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -28,42 +31,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ApexWithRequirements</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ChangePasswordController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ChangePasswordControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>ClassRequiredByAnother</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CommunitiesLandingController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CommunitiesLandingControllerTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CustomSiteRegisterController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>EmailUtils</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>FailingTests</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>MetadataChurner</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -76,7 +43,11 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>PassingTests</apexClass>
+        <apexClass>PrepareSandbox</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PrepareSandboxTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -84,14 +55,13 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TemperatureConverter</apexClass>
+        <apexClass>RandomExceptionHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>TemperatureConverterTest</apexClass>
+        <apexClass>TestUtils</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.AccountNumber</field>
@@ -115,11 +85,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.BillingAddress</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.CI_Demo__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -198,6 +163,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Parent_account_total_ATV_legacy_field__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Phone</field>
         <readable>true</readable>
@@ -220,11 +190,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.SLA__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.SalesDemoField__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -269,12 +234,192 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.Version__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Website</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.YearStarted</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AppointmentInvitation.AppointmentTopicId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AppointmentInvitation.AppointmentType</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AppointmentInvitation.BookingEndDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AppointmentInvitation.BookingStartDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AppointmentInvitation.InvitationUrl</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AppointmentInvitation.IsActive</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AppointmentInvitation.ServiceTerritoryId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AppointmentInvitation.UrlExpiryDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AppointmentInvitee.IsRequiredResource</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AppointmentInvitee.ParticipantServiceResourceId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.Comments</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.DoesSendApprovalEmail</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.FlowOrchestrationInstanceId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.RelatedRecordId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.RelatedRecordObjectName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.Status</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmission.SubmittedById</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ActionChannelName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ActionContext</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ActionName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ActionPerformedById</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ActionPerformerRole</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ApprovalSubmissionId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.ApprovalWorkItemId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalSubmissionDetail.Comments</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.ApprovalConditionName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.ApprovalSubmissionId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.AssignedToId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.Comments</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.FlowOrchestrationWorkItemId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.RelatedRecordId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.RelatedRecordObjectName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.ReviewedById</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.ReviewedDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ApprovalWorkItem.Status</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -504,6 +649,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ContactPointAddress.IsThirdPartyAddress</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ContactPointAddress.ParentId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -580,6 +730,41 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ContactPointEmail.UsageType</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CreditMemo.CorpCrcyCnvTotAmtWithTax</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CreditMemo.CorporateCurrencyCvsnDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CreditMemo.CorporateCurrencyCvsnRate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CreditMemoLine.CorpCurrencyCnvChargeAmt</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CreditMemoLine.CorpCurrencyCnvTotalTaxAmt</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CreditMemoLine.CorporateCurrencyCvsnDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>CreditMemoLine.CorporateCurrencyCvsnRate</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -675,6 +860,31 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Entitlement.WorkOrdersPerEntitlement</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FulfillmentOrder.FulfilledFromLocationId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FulfillmentOrder.FulfilledToAddress</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FulfillmentOrder.FulfilledToEmailAddress</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FulfillmentOrder.FulfilledToPhone</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FulfillmentOrder.TotalProductAmount</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -799,6 +1009,41 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Invoice.CorpCrcyCnvTotAmtWithTax</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Invoice.CorporateCurrencyCvsnDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Invoice.CorporateCurrencyCvsnRate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InvoiceLine.CorpCurrencyCnvChargeAmt</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InvoiceLine.CorpCurrencyCnvTotalTaxAmt</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InvoiceLine.CorporateCurrencyCvsnDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>InvoiceLine.CorporateCurrencyCvsnRate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>LegalEntity.CompanyName</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -818,8 +1063,148 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Opportunity.Close_Reason__c</field>
+        <editable>true</editable>
+        <field>Location.CloseDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.ConstructionEndDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.ConstructionStartDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.DefaultPickupTime</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.DefaultProcessingTime</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.DefaultProcessingTimeUnit</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.Description</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.DrivingDirections</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.FulfillingBusinessHoursId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.Location</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.LocationLevel</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.OpenDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.ParentLocationId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.PossessionDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.RemodelEndDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.RemodelStartDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.TimeZone</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Location.VisitorAddressId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingEndUser.AccountId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingEndUser.AuthenticatedEndUserId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingEndUser.ContactId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingEndUser.HasInitialResponseSent</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingEndUser.IsOptedOut</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingEndUser.Language</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingEndUser.LeadId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingSession.CaseId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingSession.EndUserLanguage</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingSession.LeadId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>MessagingSession.OpportunityId</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -919,12 +1304,92 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Promotion.DisplayName</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.EndDateTime</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.ExclusivityType</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.IsAutomatic</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.IsCommercePromotion</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.IsQualCriteriaNotRequiredPerApplication</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.IsTiered</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.MaximumUsageCount</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.PriorityNumber</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.QualifierCriteria</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.StartDateTime</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Promotion.TermsAndConditions</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ResourceAbsence.Address</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>ResourceAbsence.Description</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ReturnOrder.ProcessType</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.AppointmentInvitationId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceAppointment.TimeZone</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceContract.AdditionalDiscount</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -964,12 +1429,37 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ServiceTerritory.PricebookId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceTerritory.SelfCheckInUrl</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ServiceTerritory.ServiceAppointmentLimitType</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ServiceTerritory.TopLevelTerritoryId</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>ServiceTerritory.TypicalInTerritoryTravelTime</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ShiftWorkTopic.AttendeeLimit</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ShiftWorkTopic.ServiceAppointmentLimit</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1149,6 +1639,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>WorkStep.ProcessType</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>WorkType.BlockTimeAfterAppointment</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1175,6 +1670,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>WorkType.OperatingHoursId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkType.ProductId</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1465,11 +1965,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.AssetId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Case_Description__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3162,7 +3657,31 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-ActivationTarget</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-AppLauncher</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-AppointmentCategory</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-AppointmentInvitation</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ApprovalSubmission</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ApprovalSubmissionDetail</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ApprovalWorkItem</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -3183,6 +3702,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-BusinessBrand</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-BuyerGroup</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -3218,6 +3741,14 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-ContractLineItem</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Coupon</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-CredentialStuffingEventStore</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -3234,7 +3765,43 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-DataAction</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-DataActionTarget</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-DataCommunicationCap</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-DataGraph</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-DataLakeObjectInstance</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-DataMaskCustomValueLibrary</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-DataQueryWorkspace</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-DataStream</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-DataUseLegalBasis</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-DeliveryEstimationSetup</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -3251,10 +3818,18 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-EngagementChannelType</tab>
-        <visibility>DefaultOn</visibility>
+        <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Entitlement</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ExtDataShare</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ExtDataShareTarget</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -3266,7 +3841,23 @@
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-FlowOrchestrationInstance</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-FlowOrchestrationWorkItem</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Forecasting3</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-FulfillmentOrder</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-IdentityResolution</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -3275,6 +3866,18 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Incident</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-InventoryItemReservation</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-InventoryReservation</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-InvoiceLine</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -3295,10 +3898,30 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-LocationGroup</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-LocationShippingCarrierMethod</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-MarketSegment</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-MarketSegmentActivation</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-MessagingEndUser</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-MktCalculatedInsight</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-MktDataTransform</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -3314,6 +3937,18 @@
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-PaymentCredit</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-PaymentCreditLinePayment</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-PaymentCreditTransaction</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-PaymentGateway</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
@@ -3322,7 +3957,27 @@
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-PricebookEntry</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-PrivacyJobSession</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-PrivacyRTBFRequest</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Product2</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ProductCatalog</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ProductCategory</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -3331,6 +3986,18 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-ProfilePlatformOverview</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-Promotion</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-PromotionMarketSegment</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-PromotionSegment</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -3370,6 +4037,18 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-Shipment</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ShippingCarrier</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-ShippingCarrierMethod</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-Sites</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -3394,7 +4073,19 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>standard-Waitlist</tab>
+        <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-WaitlistParticipant</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>standard-WebCart</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>standard-WebStoreInventorySource</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
@@ -3583,7 +4274,7 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-SocialPersona</tab>
-        <visibility>DefaultOff</visibility>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>standard-Task</tab>
@@ -3617,10 +4308,13 @@
         <tab>standard-report</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
-    <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
         <name>AIViewInsightObjects</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AccessOrchestrationObjects</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -3656,6 +4350,22 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>AppFrameworkManageApp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AppFrameworkManageTemplate</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApprovalAdmin</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApprovalDesigner</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>AssignPermissionSets</name>
     </userPermissions>
     <userPermissions>
@@ -3673,6 +4383,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>CanAccessCE</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>CanApproveUninstalledApps</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -3713,6 +4427,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ChatterOwnGroups</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ClientSecretRotation</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -3880,6 +4598,22 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ExternalClientAppAdmin</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ExternalClientAppDeveloper</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ExternalClientAppViewer</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>FreezeUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>GiveRecognitionBadge</name>
     </userPermissions>
     <userPermissions>
@@ -3956,7 +4690,15 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageContentTaxonomy</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageContentTypes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageCustomDomains</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -3965,6 +4707,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageCustomReportTypes</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageCustomerDataOptOut</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -3977,6 +4723,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageDataIntegrations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageDataMaskPolicies</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -3996,7 +4746,15 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageFilesAndAttachments</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageHealthCheck</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageHerokuAppLink</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -4037,6 +4795,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageNetworks</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageOrchInstsAndWorkItems</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -4100,6 +4862,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageTranslation</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageUnlistedGroups</name>
     </userPermissions>
     <userPermissions>
@@ -4132,6 +4898,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>MonitorLoginHistory</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>NewReportBuilder</name>
     </userPermissions>
     <userPermissions>
@@ -4153,6 +4923,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>PublishPackaging</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>QrCodeGeneratorMobilePublisherPlayground</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -4228,6 +5002,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>TerritoryOperations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>TransactionalEmailSend</name>
     </userPermissions>
     <userPermissions>
@@ -4243,12 +5021,20 @@
         <name>TransferAnyLead</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>UseAddOrderItemSummaryAPIs</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>UseFulfillmentAPIs</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>UseOmnichannelInventoryAPIs</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>UseRegisterGuestBuyerAPI</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -4277,6 +5063,14 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewAllUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewClientSecret</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewContentTaxonomy</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -4309,6 +5103,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewHelpLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewLicenseUtilization</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -4453,7 +5251,7 @@
         <layout>AlternativePaymentMethod-Alternative Payment Method Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>ApiAnomalyEventStore-API Anomaly Event Store Layout</layout>
+        <layout>AppointmentInvitation-Appointment Invitation Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Asset-Asset Layout</layout>
@@ -4472,6 +5270,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>AssignedResource-Assigned Resource Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>AssociatedLocation-Associated Location Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>AsyncOperationLog-Async Operation Log Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>AuthorizationForm-Authorization Form Layout</layout>
@@ -4502,6 +5306,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>CartDeliveryGroup-Cart Delivery Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CartDeliveryGroupMethod-Cart Delivery Group Method Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CartItem-Cart Item Layout</layout>
@@ -4555,10 +5362,10 @@
         <layout>ContractLineItem-Contract Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>CredentialStuffingEventStore-Credential Stuffing Event Store Layout</layout>
+        <layout>CreditMemo-Credit Memo Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>CreditMemo-Credit Memo Layout</layout>
+        <layout>CreditMemoInvApplication-Credit Memo Invoice Application Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CreditMemoLine-Credit Memo Line Layout</layout>
@@ -4585,6 +5392,9 @@
         <layout>EmailMessage-Email Message Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>EngagementChannelType-Engagement Channel Type Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Entitlement-Entitlement Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4603,7 +5413,22 @@
         <layout>FinanceTransaction-Finance Transaction Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>FulfillmentOrder-Fulfillment Order Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FulfillmentOrderItemAdjustment-Fulfillment Order Item Adjustment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FulfillmentOrderItemTax-Fulfillment Order Item Tax Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FulfillmentOrderLineItem-Fulfillment Order Product Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Global-Global Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>GuestUserAnomalyEventStore-Guest User Anomaly Event Store Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Idea-Idea Layout</layout>
@@ -4622,6 +5447,18 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>LegalEntity-Legal Entity Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Location-Location Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LocationGroup-Location Group Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LocationGroupAssignment-Location Group Assignment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>LoginAnomalyEventStore-Login Anomaly Event Store Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Macro-Macro Layout</layout>
@@ -4738,10 +5575,19 @@
         <layout>ServiceTerritoryMember-Service Territory Member Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>SessionHijackingEventStore-Session Hijacking Event Store Layout</layout>
+        <layout>Shift-Shift Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Shift-Shift Layout</layout>
+        <layout>ShiftWorkTopic-Shift Work Topic Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ShippingConfigurationSet-Shipping Configuration Set Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ShippingRateArea-Shipping Rate Area Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ShippingRateGroup-Shipping Rate Group Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SkillRequirement-Skill Requirement Layout</layout>
@@ -4753,10 +5599,10 @@
         <layout>Solution-Solution Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Task-Task Layout</layout>
+        <layout>StandardShippingRate-Standard Shipping Rate Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Team__c-Team Layout</layout>
+        <layout>Task-Task Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ThreatDetectionFeedback-Threat Detection Feedback Layout</layout>
@@ -4777,10 +5623,16 @@
         <layout>UserProvisioningRequest-User Provisioning Request Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Waitlist-%5F%5FMISSING LABEL%5F%5F PropertyFile - val Waitlist not found in section StandardLayouts</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>WebCart-Cart Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WebCartAdjustmentBasis-Cart Adjustment Basis Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WebCartAdjustmentGroup-Cart Adjustment Group Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WebStore-Store Layout</layout>
@@ -4790,6 +5642,21 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkOrderLineItem-Work Order Line Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkPlan-Work Plan Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkPlanTemplate-Work Plan Template Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkPlanTemplateEntry-Work Plan Template Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStep-Work Step Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkStepTemplate-Work Step Template Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkType-Work Type Layout</layout>
